@@ -1,7 +1,7 @@
-numpy
-matplotlib
-tensorflow
-seaborn
 streamlit
-google-genai
+tensorflow
+opencv-python-headless
+numpy
+pillow
 streamlit-drawable-canvas
+google-genai
