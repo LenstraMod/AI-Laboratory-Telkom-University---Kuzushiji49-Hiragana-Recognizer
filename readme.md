@@ -19,7 +19,7 @@ The **Kuzushiji Recognizer** solves the challenge of reading ancient or handwrit
 * **📂 Smart Image Upload:** Upload images with automatic aspect-ratio padding (prevents distortion).
 * **🤖 Hybrid Intelligence:**
     * **Local Model:** A lightweight Convolutional Neural Network (CNN) trained on KMNIST-49 (Offline capable).
-    * **Cloud Expert:** Integration with **Google Gemini 1.5 Flash** via the official `google-genai` SDK for high-accuracy verification.
+    * **Cloud Expert:** Integration with **Google Gemini 3 Flash Preview** via the official `google-genai` SDK for high-accuracy verification.
 * **🛠 Modular Codebase:** Clean separation of concerns using a `modules/` package structure.
 
 ---
