@@ -4,3 +4,4 @@ tensorflow
 seaborn
 streamlit
 google-genai
+streamlit-drawable-canvas
