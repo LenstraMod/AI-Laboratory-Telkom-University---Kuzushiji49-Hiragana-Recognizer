@@ -46,8 +46,11 @@ with tab1:
                 with col3:
                     if gemini_api_key:
                         with st.spinner("Recognizing curved japanese by gemini..."):
-                            char,_ = gemini_api.gemini_req(Image.fromarray(img_inverted), gemini_api_key)
-                            st.metric("Gemini Prediction", f"Hiragana : {char}")
+                            try:
+                                char,_ = gemini_api.gemini_req(Image.fromarray(img_inverted), gemini_api_key)
+                                st.metric("Gemini Prediction", f"Hiragana : {char}")
+                            except Exception as e:
+                                st.write(e)
                     else:
                         st.write("Enter your Gemini API Key in the sidebar to enable Gemini predictions.")
                 
@@ -72,8 +75,11 @@ with tab2:
             with col3:
                 if gemini_api_key:
                         with st.spinner("Recognizing curved japanese by gemini..."):
-                            char,_ = gemini_api.gemini_req(Image.fromarray(img_inverted), gemini_api_key)
-                            st.metric("Gemini Prediction", f"Hiragana : {char}")
+                            try:
+                                char,_ = gemini_api.gemini_req(Image.fromarray(img_inverted), gemini_api_key)
+                                st.metric("Gemini Prediction", f"Hiragana : {char}")
+                            except Exception as e:
+                                st.write(e)
                 else:
                         st.write("Enter your Gemini API Key in the sidebar to enable Gemini predictions.")
 
