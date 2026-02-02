@@ -24,4 +24,9 @@ def gemini_req(image,api_key):
             return "No character detected", 0.0
     
     except Exception as e:
-        return f"Error: {str(e)}", 0.0
+        error_msg = str(e).lower()
+        
+        if "429" in error_msg or "quota" in error_msg:
+            return "Quota limit exceeded. Please try again later.", 0.0
+        
+        return "Connection Error",0.0

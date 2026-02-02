@@ -48,7 +48,12 @@ with tab1:
                         with st.spinner("Recognizing curved japanese by gemini..."):
                             try:
                                 char,_ = gemini_api.gemini_req(Image.fromarray(img_inverted), gemini_api_key)
-                                st.write("Gemini Prediction", f"Hiragana : {char}")
+                                if "Quota limit exceeded" in char:
+                                    st.error(char)
+                                elif "Connection Error" in char:
+                                    st.error(char)
+                                else:
+                                    st.metric("Gemini Prediction", f"Hiragana : {char}")
                             except Exception as e:
                                 st.write(e)
                     else:
@@ -77,7 +82,12 @@ with tab2:
                         with st.spinner("Recognizing curved japanese by gemini..."):
                             try:
                                 char,_ = gemini_api.gemini_req(Image.fromarray(img_inverted), gemini_api_key)
-                                st.metric("Gemini Prediction", f"Hiragana : {char}")
+                                if "Quota limit exceeded" in char:
+                                    st.error(char)
+                                elif "Connection Error" in char:
+                                    st.error(char)
+                                else:
+                                    st.metric("Gemini Prediction", f"Hiragana : {char}")
                             except Exception as e:
                                 st.write(e)
                 else:
