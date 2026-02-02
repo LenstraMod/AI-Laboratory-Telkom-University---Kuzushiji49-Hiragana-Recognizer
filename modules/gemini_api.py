@@ -14,7 +14,7 @@ def gemini_req(image,api_key):
         Return ONLY the single character"""
         
         response = client.models.generate_content(
-            model="gemini-3-flash-preview",
+            model="gemini-2.5-flash",
             contents = [prompt, image]
         )
         
