@@ -48,7 +48,7 @@ with tab1:
                         with st.spinner("Recognizing curved japanese by gemini..."):
                             try:
                                 char,_ = gemini_api.gemini_req(Image.fromarray(img_inverted), gemini_api_key)
-                                st.metric("Gemini Prediction", f"Hiragana : {char}")
+                                st.write("Gemini Prediction", f"Hiragana : {char}")
                             except Exception as e:
                                 st.write(e)
                     else:
