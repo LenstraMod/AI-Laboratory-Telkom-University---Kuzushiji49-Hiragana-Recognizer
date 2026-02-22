@@ -12,7 +12,8 @@ st.set_page_config(
     page_icon="🇯🇵",
 )
 
-st.title("Japanese Kuzushiji Character Recognition")
+st.title("Japanese Kuzushiji Character Recognition 📝")
+st.write("This is a web application that recognizes handwritten Japanese characters (Kuzushiji) using a Convolutional Neural Network (CNN) model. You can draw a character on the canvas or upload an image of a character, and the model will predict which character it is along with the confidence level. Additionally, if you have a Gemini API key, you can also get predictions from Gemini for comparison.")
 
 st.sidebar.header("Canvas Settings")
 stroke_width = st.sidebar.slider("Stroke width: ", 1, 30, 15)

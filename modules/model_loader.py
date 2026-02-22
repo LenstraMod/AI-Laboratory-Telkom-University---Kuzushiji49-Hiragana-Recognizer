@@ -40,14 +40,8 @@ def load_model(path="model_kmnist49.h5"):
 
                     layer.set_weights([kernel, bias])
                 except Exception as e:
-                    st.write(f"skip {layer.name}: {e}")
+                    print(f"skip {layer.name}: {e}")
                 
-            for l in model.layers:
-                w = l.get_weights()
-                if w:
-                    st.write(l.name,
-                        "mean:", float(np.mean(w[0])),
-                        "std:", float(np.std(w[0])))
        return model
 
     except Exception as e:
