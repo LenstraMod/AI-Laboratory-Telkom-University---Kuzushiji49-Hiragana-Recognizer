@@ -48,11 +48,8 @@ def predict_image(model,image_array, source="canvas"):
     
     # Shape: (1, 28, 28, 1)
     img_final = np.expand_dims(img_boostthick, axis=(0, -1))  
-    
-    st.image(img_resized, caption="after resize")
-    st.image(img_boostthick, caption="after thickening")
-    st.write("range:", img_boostthick.min(), img_boostthick.max())
-    st.write("unique:", np.unique(img_boostthick)[:10])
+
+    img_inverted = (img_inverted * 255).astype("uint8")
     
     
     #predict using the model

@@ -29,4 +29,4 @@ def gemini_req(image,api_key):
         if "429" in error_msg or "quota" in error_msg:
             return "Quota limit exceeded. Please try again later.", 0.0
         
-        return "Connection Error",0.0
+        return f"Connection Error : {e}",0.0
